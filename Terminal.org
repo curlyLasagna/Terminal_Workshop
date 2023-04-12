@@ -1,0 +1,93 @@
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_PLUGINS: (highlight)
+:END:
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+author: Luis Gascon
+#+title: Terminal: Friendlier than it seems
+
+* Background
+** Who am I?
+My name's Luis Gascon. I want to share my workflow and the tools that I love in the command line to break the myth that you have to be an advanced computer user to use it.
+
+I recently switched over to a Macbook because the M1 is too good to pass. I'm still uncomfortable with MacOS and it's weird quirks but thanks to its UNIX shell, I felt right at home and was able to get things done.
+**
+
+* It's 2023. Why do terminals still exist?
+The command line doesn't look modern. Are you trying to be a try hard?
+No. It does come with many benefits
+Learning how to use the command line opens up a new avenue to using computers.
+** Automation
+You can easily automate manual tasks with text compared to clicking buttons around
+The power to chain commands together is so powerful, people get paid to do it 😎
+** It's the only way to use certain software
+Many open source applications are only built to be interacted with the terminal. Some have GUIs made for it, but it takes considerable effort to do so and if you've played around with some, it's janky and slow.
+** Blazingly fast and light
+If you just have to deal with text, it's so
+* Note for Windows users...
+I'm no Windows expert, but from experience, cmd.exe is trash, and I don't recommend on using it.
+Unsure if it comes by default but Windows has a terminal emulator called "Windows Terminal" that can deal with it
+* She sells sea =shell= s by the sea shore
+A shell is the program that interprets the commands that you input.
+By default,
+MacOS ships with zsh,
+most Linux distributions come with bash,
+Windows with powershell
+
+The beauty of it is that you can always change it
+You can think of a shell like the Python interpreter
+* Navigation
++ =ls=
+  - Take a peek at current directory or at a specified location
++ =cd=
+  - Change directory. This allows
++ =ranger=
+  - Isn't shipped by default but it makes terminal navigation much more intuitive and visual
+  - To install ranger, we'll have to know about package managers, which I'll cover in a bit
+* Working with files
++ =mv=
++ =cat=
++ =rm=
+* What are flags?
+Flags modify how a program behaves.
+For example, when you pass a =-a= flag to =ls=, it will also include hidden files, A.K.A dotfiles since they start with dots
+* Package managers
+Imagine clicking buttons to install a program when you could look like this:
+<Insert chad using a terminal>
+
+A package manager downloads, installs, uninstalls and automagically configures your system to be able to run the command that you want to install.
+
+** Windows
+- Scoop
+- Chocolatey
+** MacOS
+- Brew
+  + The de facto package manager for MacOS
+  + Many popular packages may be found here
+- MacPorts
+- Nix
+  + This package manager is great if you're up for a challenge!
+** Linux
+- Depends on the distribution, so I'm not about to list all of them
+
+* How to make the terminal more /aesthetic/ and /functional/
+You're not constraint to a boring black screen with lines of text strewn across it
+There are a myriad of open source tools that can turn make the terminal experience significantly more pleasant.
+** Custom Prompts
+- [[https://starship.rs][Starship]]
+  + Provides convenient information depending on the context of your current directory such as what type of files are in the
+** Alternatives to common commands
+Open source is beautiful in that you can try out alternatives to the commands that we just learned about
+Some add more functionality, and some are more performant.
+- [[https://github.com/sharkdp/fd][fd]]
+  + An alternative to the find command. Very handy when you can't find a certain file
+- [[https://github.com/BurntSushi/ripgrep][rg]]
+  + Stands for rip grep, which looks for patterns within files so if you can't remember which file has the keyword "hello world", it'll tell you where it's located and which line in the file it's located.
+-
+** Text editors
+If you want to stay in the terminal, there are multiple text editors that can be as powerful as GUI-based text editors such as VSCode, and definitely more than Dr. Java 🤮
+- [[https://neovim.io][Neovim]]
+- [[https://helix-editor.com][Helix]]
+  + A modal text editor similar to Vim but with a twist. LSP support is included out of the box, so as long as you have the LSP installed, you can be up and running in no time
+- Emacs

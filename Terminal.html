@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Terminal: Friendlier than it seems</title>
+<meta name="author" content="Luis Gascon"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Terminal: Friendlier than it seems</h1><h2 class="author">Luis Gascon</h2>
+</section>
+
+<section>
+<section id="slide-org0cb7680">
+<h2 id="org0cb7680">Background</h2>
+<div class="outline-text-2" id="text-org0cb7680">
+</div>
+</section>
+<section id="slide-org30501cc">
+<h3 id="org30501cc">Who am I?</h3>
+<p>
+My name&rsquo;s Luis Gascon. I want to share my workflow and the tools that I love in the command line to break the myth that you have to be an advanced computer user to use it.
+</p>
+
+<p>
+I recently switched over to a Macbook because the M1 is too good to pass. I&rsquo;m still uncomfortable with MacOS and it&rsquo;s weird quirks but thanks to its UNIX shell, I felt right at home and was able to get things done.
+**
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org176705e">
+<h2 id="org176705e">It&rsquo;s 2023. Why do terminals still exist?</h2>
+<p>
+The command line doesn&rsquo;t look modern. Are you trying to be a try hard?
+No. It does come with many benefits
+Learning how to use the command line opens up a new avenue to using computers.
+</p>
+</section>
+<section id="slide-orgb95d70f">
+<h3 id="orgb95d70f">Automation</h3>
+<p>
+You can easily automate manual tasks with text compared to clicking buttons around
+The power to chain commands together is so powerful, people get paid to do it 😎
+</p>
+</section>
+<section id="slide-org9a7e3e0">
+<h3 id="org9a7e3e0">It&rsquo;s the only way to use certain software</h3>
+<p>
+Many open source applications are only built to be interacted with the terminal. Some have GUIs made for it, but it takes considerable effort to do so and if you&rsquo;ve played around with some, it&rsquo;s janky and slow.
+</p>
+</section>
+<section id="slide-org42c9d6c">
+<h3 id="org42c9d6c">Blazingly fast and light</h3>
+<p>
+If you just have to deal with text, it&rsquo;s so
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org9bb86a8">
+<h2 id="org9bb86a8">Note for Windows users&#x2026;</h2>
+<p>
+I&rsquo;m no Windows expert, but from experience, cmd.exe is trash, don&rsquo;t use it.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgd9afc39">
+<h2 id="orgd9afc39">She sells sea <code>shell</code> s by the sea shore</h2>
+<p>
+A shell is the program that interprets the commands that you input.
+By default,
+MacOS ships with zsh,
+most Linux distributions come with bash,
+Windows with powershell
+</p>
+
+<p>
+The beauty of it is that you can always change it
+You can think of a shell like the Python interpreter
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org3b67c9d">
+<h2 id="org3b67c9d">Navigation</h2>
+<ul>
+<li><code>ls</code>
+<ul>
+<li>Take a peek at current directory or at a specified location</li>
+
+</ul></li>
+<li><code>cd</code>
+<ul>
+<li>Change directory. This allows</li>
+
+</ul></li>
+<li><code>ranger</code>
+<ul>
+<li>Isn&rsquo;t shipped by default but it makes terminal navigation much more intuitive and visual</li>
+<li>To install ranger, we&rsquo;ll have to know about package managers, which I&rsquo;ll cover in a bit</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1b13176">
+<h2 id="org1b13176">Working with files</h2>
+<ul>
+<li><code>mv</code></li>
+<li><code>cat</code></li>
+<li><code>rm</code></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org73834be">
+<h2 id="org73834be">What are flags?</h2>
+<p>
+Flags modify how a program behaves.
+For example, when you pass a <code>-a</code> flag to <code>ls</code>, it will also include hidden files, A.K.A dotfiles since they start with dots
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org2176361">
+<h2 id="org2176361">Package managers</h2>
+<p>
+Imagine clicking buttons to install a program when you could look like this:
+&lt;Insert chad using a terminal&gt;
+</p>
+
+<p>
+A package manager downloads, installs, uninstalls and automagically configures your system to be able to run the command that you want to install.
+</p>
+
+</section>
+<section id="slide-orgc735b00">
+<h3 id="orgc735b00">Windows</h3>
+<ul>
+<li>Scoop</li>
+<li>Chocolatey</li>
+
+</ul>
+</section>
+<section id="slide-orgf0b806c">
+<h3 id="orgf0b806c">MacOS</h3>
+<ul>
+<li>Brew
+<ul>
+<li>The de facto package manager for MacOS</li>
+<li>Many popular packages may be found here</li>
+
+</ul></li>
+<li>MacPorts</li>
+<li>Nix
+<ul>
+<li>This package manager is great if you&rsquo;re up for a challenge!</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org0d1116b">
+<h3 id="org0d1116b">Linux</h3>
+<ul>
+<li>Depends on the distribution, so I&rsquo;m not about to list all of them</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge3a30c6">
+<h2 id="orge3a30c6">How to make the terminal more <i>aesthetic</i> and <i>functional</i></h2>
+<p>
+You&rsquo;re not constraint to a boring black screen with lines of text strewn across it
+There are a myriad of open source tools that can turn make the terminal experience significantly more pleasant.
+</p>
+</section>
+<section id="slide-orga204ba3">
+<h3 id="orga204ba3">Custom Prompts</h3>
+<ul>
+<li><a href="https://starship.rs">Starship</a>
+<ul>
+<li>Provides convenient information depending on the context of your current directory such as what type of files are in the</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org6c0c340">
+<h3 id="org6c0c340">Alternatives to common commands</h3>
+<p>
+Open source is beautiful in that you can try out alternatives to the commands that we just learned about
+Some add more functionality, and some are more performant.
+</p>
+<ul>
+<li><a href="https://github.com/sharkdp/fd">fd</a>
+<ul>
+<li>An alternative to the find command. Very handy when you can&rsquo;t find a certain file</li>
+
+</ul></li>
+<li><a href="https://github.com/BurntSushi/ripgrep">rg</a>
+<ul>
+<li>Stands for rip grep, which looks for patterns within files so if you can&rsquo;t remember which file has the keyword &ldquo;hello world&rdquo;, it&rsquo;ll tell you where it&rsquo;s located and which line in the file it&rsquo;s located.</li>
+
+</ul></li>
+<li></li>
+
+</ul>
+</section>
+<section id="slide-org45ea404">
+<h3 id="org45ea404">Text editors</h3>
+<p>
+If you want to stay in the terminal, there are multiple text editors that can be as powerful as GUI-based text editors such as VSCode, and definitely more than Dr. Java 🤮
+</p>
+<ul>
+<li><a href="https://neovim.io">Neovim</a></li>
+<li><a href="https://helix-editor.com">Helix</a>
+<ul>
+<li>A modal text editor similar to Vim but with a twist. LSP support is included out of the box, so as long as you have the LSP installed, you can be up and running in no time</li>
+
+</ul></li>
+<li>Emacs</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
