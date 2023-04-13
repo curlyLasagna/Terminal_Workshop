@@ -18,69 +18,100 @@
 <section id="sec-title-slide">
 <h1 class="title">Terminal: Friendlier than it seems</h1><h2 class="author">Luis Gascon</h2>
 </section>
-
-<section>
-<section id="slide-org0cb7680">
-<h2 id="org0cb7680">Background</h2>
-<div class="outline-text-2" id="text-org0cb7680">
-</div>
-</section>
-<section id="slide-org30501cc">
-<h3 id="org30501cc">Who am I?</h3>
+<aside class="notes">
 <p>
 My name&rsquo;s Luis Gascon. I want to share my workflow and the tools that I love in the command line to break the myth that you have to be an advanced computer user to use it.
 </p>
 
 <p>
 I recently switched over to a Macbook because the M1 is too good to pass. I&rsquo;m still uncomfortable with MacOS and it&rsquo;s weird quirks but thanks to its UNIX shell, I felt right at home and was able to get things done.
-**
 </p>
 
-</section>
-</section>
+</aside>
+
 <section>
-<section id="slide-org176705e">
-<h2 id="org176705e">It&rsquo;s 2023. Why do terminals still exist?</h2>
+<section id="slide-orge4df4d9">
+<h2 id="orge4df4d9">It&rsquo;s 2023. Why do terminals still exist?</h2>
 <p>
 The command line doesn&rsquo;t look modern. Are you trying to be a try hard?
 No. It does come with many benefits
 Learning how to use the command line opens up a new avenue to using computers.
 </p>
 </section>
-<section id="slide-orgb95d70f">
-<h3 id="orgb95d70f">Automation</h3>
+<section id="slide-orgbc43723">
+<h3 id="orgbc43723">Automation</h3>
 <p>
 You can easily automate manual tasks with text compared to clicking buttons around
+</p>
+
+<p>
 The power to chain commands together is so powerful, people get paid to do it 😎
 </p>
 </section>
-<section id="slide-org9a7e3e0">
-<h3 id="org9a7e3e0">It&rsquo;s the only way to use certain software</h3>
+<section id="slide-orgf4b17ed">
+<h3 id="orgf4b17ed">It&rsquo;s the only way to use certain software</h3>
 <p>
 Many open source applications are only built to be interacted with the terminal. Some have GUIs made for it, but it takes considerable effort to do so and if you&rsquo;ve played around with some, it&rsquo;s janky and slow.
 </p>
 </section>
-<section id="slide-org42c9d6c">
-<h3 id="org42c9d6c">Blazingly fast and light</h3>
+<section id="slide-orgecbf997">
+<h3 id="orgecbf997">Blazingly fast</h3>
 <p>
-If you just have to deal with text, it&rsquo;s so
+If it&rsquo;s written in rust&#x2026;
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf29f195">
+<h2 id="orgf29f195">Note for Windows users&#x2026;</h2>
+<p>
+I&rsquo;m no Windows expert, but from experience, cmd.exe is trash, and I don&rsquo;t recommend on using it.
+Unsure if it comes by default but Windows has a terminal emulator called &ldquo;Windows Terminal&rdquo; that can deal with it
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org9bb86a8">
-<h2 id="org9bb86a8">Note for Windows users&#x2026;</h2>
-<p>
-I&rsquo;m no Windows expert, but from experience, cmd.exe is trash, don&rsquo;t use it.
-</p>
-</section>
-</section>
-<section>
-<section id="slide-orgd9afc39">
-<h2 id="orgd9afc39">She sells sea <code>shell</code> s by the sea shore</h2>
+<section id="slide-org1feaf25">
+<h2 id="org1feaf25">She sells sea <code>shell</code> s by the sea shore</h2>
 <p>
 A shell is the program that interprets the commands that you input.
 By default,
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">OS</th>
+<th scope="col" class="org-left">Default shell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">MacOS</td>
+<td class="org-left">zsh</td>
+</tr>
+
+<tr>
+<td class="org-left">Windows</td>
+<td class="org-left">powershell</td>
+</tr>
+
+<tr>
+<td class="org-left">Linux</td>
+<td class="org-left">bash</td>
+</tr>
+</tbody>
+</table>
+
+<p>
 MacOS ships with zsh,
 most Linux distributions come with bash,
 Windows with powershell
@@ -93,8 +124,8 @@ You can think of a shell like the Python interpreter
 </section>
 </section>
 <section>
-<section id="slide-org3b67c9d">
-<h2 id="org3b67c9d">Navigation</h2>
+<section id="slide-orgb836ab0">
+<h2 id="orgb836ab0">Navigation</h2>
 <ul>
 <li><code>ls</code>
 <ul>
@@ -117,8 +148,8 @@ You can think of a shell like the Python interpreter
 </section>
 </section>
 <section>
-<section id="slide-org1b13176">
-<h2 id="org1b13176">Working with files</h2>
+<section id="slide-org28fe6bc">
+<h2 id="org28fe6bc">Working with files</h2>
 <ul>
 <li><code>mv</code></li>
 <li><code>cat</code></li>
@@ -128,8 +159,8 @@ You can think of a shell like the Python interpreter
 </section>
 </section>
 <section>
-<section id="slide-org73834be">
-<h2 id="org73834be">What are flags?</h2>
+<section id="slide-org8c41810">
+<h2 id="org8c41810">What are flags?</h2>
 <p>
 Flags modify how a program behaves.
 For example, when you pass a <code>-a</code> flag to <code>ls</code>, it will also include hidden files, A.K.A dotfiles since they start with dots
@@ -137,8 +168,8 @@ For example, when you pass a <code>-a</code> flag to <code>ls</code>, it will al
 </section>
 </section>
 <section>
-<section id="slide-org2176361">
-<h2 id="org2176361">Package managers</h2>
+<section id="slide-orga25efa6">
+<h2 id="orga25efa6">Package managers</h2>
 <p>
 Imagine clicking buttons to install a program when you could look like this:
 &lt;Insert chad using a terminal&gt;
@@ -149,16 +180,22 @@ A package manager downloads, installs, uninstalls and automagically configures y
 </p>
 
 </section>
-<section id="slide-orgc735b00">
-<h3 id="orgc735b00">Windows</h3>
+<section id="slide-org62be634">
+<h3 id="org62be634">Windows</h3>
 <ul>
-<li>Scoop</li>
+<li>Scoop
+<ul>
+<li>Installs packages within the current user&rsquo;s directory so it doesn&rsquo;t mess</li>
+<li>Since it</li>
+<li>My preferred package manager for windows</li>
+
+</ul></li>
 <li>Chocolatey</li>
 
 </ul>
 </section>
-<section id="slide-orgf0b806c">
-<h3 id="orgf0b806c">MacOS</h3>
+<section id="slide-org7770b14">
+<h3 id="org7770b14">MacOS</h3>
 <ul>
 <li>Brew
 <ul>
@@ -175,8 +212,8 @@ A package manager downloads, installs, uninstalls and automagically configures y
 
 </ul>
 </section>
-<section id="slide-org0d1116b">
-<h3 id="org0d1116b">Linux</h3>
+<section id="slide-org2e7f8e9">
+<h3 id="org2e7f8e9">Linux</h3>
 <ul>
 <li>Depends on the distribution, so I&rsquo;m not about to list all of them</li>
 
@@ -185,15 +222,15 @@ A package manager downloads, installs, uninstalls and automagically configures y
 </section>
 </section>
 <section>
-<section id="slide-orge3a30c6">
-<h2 id="orge3a30c6">How to make the terminal more <i>aesthetic</i> and <i>functional</i></h2>
+<section id="slide-org3f03ab5">
+<h2 id="org3f03ab5">How to make the terminal more <i>aesthetic</i> and <i>functional</i></h2>
 <p>
 You&rsquo;re not constraint to a boring black screen with lines of text strewn across it
 There are a myriad of open source tools that can turn make the terminal experience significantly more pleasant.
 </p>
 </section>
-<section id="slide-orga204ba3">
-<h3 id="orga204ba3">Custom Prompts</h3>
+<section id="slide-orged3703a">
+<h3 id="orged3703a">Custom Prompts</h3>
 <ul>
 <li><a href="https://starship.rs">Starship</a>
 <ul>
@@ -203,8 +240,8 @@ There are a myriad of open source tools that can turn make the terminal experien
 
 </ul>
 </section>
-<section id="slide-org6c0c340">
-<h3 id="org6c0c340">Alternatives to common commands</h3>
+<section id="slide-org6f0dce5">
+<h3 id="org6f0dce5">Alternatives to common commands</h3>
 <p>
 Open source is beautiful in that you can try out alternatives to the commands that we just learned about
 Some add more functionality, and some are more performant.
@@ -224,8 +261,8 @@ Some add more functionality, and some are more performant.
 
 </ul>
 </section>
-<section id="slide-org45ea404">
-<h3 id="org45ea404">Text editors</h3>
+<section id="slide-orge22eb23">
+<h3 id="orge22eb23">Text editors</h3>
 <p>
 If you want to stay in the terminal, there are multiple text editors that can be as powerful as GUI-based text editors such as VSCode, and definitely more than Dr. Java 🤮
 </p>
@@ -239,6 +276,39 @@ If you want to stay in the terminal, there are multiple text editors that can be
 <li>Emacs</li>
 
 </ul>
+</section>
+</section>
+<section>
+<section id="slide-org3e187f4">
+<h2 id="org3e187f4">Trivia</h2>
+<div class="outline-text-2" id="text-org3e187f4">
+</div>
+</section>
+<section id="slide-orgb65ab36">
+<h3 id="orgb65ab36">Where did I put it?</h3>
+<p>
+You saved a recipe that your mother gave you as a text file somewhere within your home directory, but you can&rsquo;t remember where you saved it. You can&rsquo;t recall the title but you remember it had the words &ldquo;Tomato&rdquo; in the file. What do you do?
+</p>
+<ol>
+<li>Search through all the text files within your home directory one by one</li>
+<li>Use either <code>fd</code> or <code>find</code> command</li>
+<li>Use either <code>grep</code> or <code>rg</code> command</li>
+<li>Ask your mom for the recipe again</li>
+
+</ol>
+</section>
+<section id="slide-org145ad13">
+<h3 id="org145ad13">Getting ready for class</h3>
+<p>
+On the first day of your programming class, your professor asks you to install Java but they make you remotely log in to a Debian Linux server on campus and it doesn&rsquo;t have a GUI. What command do you enter?
+</p>
+<ol>
+<li><code class="src src-bash"><span style="color: #721045;">scoop</span> install java</code></li>
+<li><code class="src src-bash"><span style="color: #721045;">apt</span> install java</code></li>
+<li><code class="src src-bash"><span style="color: #721045;">brew</span> install java</code></li>
+<li><code class="src src-bash"><span style="color: #721045;">install</span> dr.Java</code></li>
+
+</ol>
 </section>
 </section>
 </div>

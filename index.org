@@ -7,12 +7,11 @@
 #+author: Luis Gascon
 #+title: Terminal: Friendlier than it seems
 
-* Background
-** Who am I?
+#+begin_notes
 My name's Luis Gascon. I want to share my workflow and the tools that I love in the command line to break the myth that you have to be an advanced computer user to use it.
 
 I recently switched over to a Macbook because the M1 is too good to pass. I'm still uncomfortable with MacOS and it's weird quirks but thanks to its UNIX shell, I felt right at home and was able to get things done.
-**
+#+end_notes
 
 * It's 2023. Why do terminals still exist?
 The command line doesn't look modern. Are you trying to be a try hard?
@@ -20,17 +19,26 @@ No. It does come with many benefits
 Learning how to use the command line opens up a new avenue to using computers.
 ** Automation
 You can easily automate manual tasks with text compared to clicking buttons around
+
 The power to chain commands together is so powerful, people get paid to do it 😎
 ** It's the only way to use certain software
 Many open source applications are only built to be interacted with the terminal. Some have GUIs made for it, but it takes considerable effort to do so and if you've played around with some, it's janky and slow.
-** Blazingly fast and light
-If you just have to deal with text, it's so
+** Blazingly fast
+If it's written in rust...
+
+
 * Note for Windows users...
 I'm no Windows expert, but from experience, cmd.exe is trash, and I don't recommend on using it.
 Unsure if it comes by default but Windows has a terminal emulator called "Windows Terminal" that can deal with it
 * She sells sea =shell= s by the sea shore
 A shell is the program that interprets the commands that you input.
 By default,
+| OS      | Default shell |
+|---------+---------------|
+| MacOS   | zsh           |
+| Windows | powershell    |
+| Linux   | bash          |
+
 MacOS ships with zsh,
 most Linux distributions come with bash,
 Windows with powershell
@@ -60,6 +68,9 @@ A package manager downloads, installs, uninstalls and automagically configures y
 
 ** Windows
 - Scoop
+  + Installs packages within the current user's directory so it doesn't mess
+  + Since it
+  + My preferred package manager for windows
 - Chocolatey
 ** MacOS
 - Brew
@@ -91,3 +102,16 @@ If you want to stay in the terminal, there are multiple text editors that can be
 - [[https://helix-editor.com][Helix]]
   + A modal text editor similar to Vim but with a twist. LSP support is included out of the box, so as long as you have the LSP installed, you can be up and running in no time
 - Emacs
+* Trivia
+** Where did I put it?
+You saved a recipe that your mother gave you as a text file somewhere within your home directory, but you can't remember where you saved it. You can't recall the title but you remember it had the words "Tomato" in the file. What do you do?
+a. Search through all the text files within your home directory one by one
+b. Use either ~fd~ or ~find~ command
+c. Use either =grep= or =rg= command
+d. Ask your mom for the recipe again
+** Getting ready for class
+On the first day of your programming class, your professor asks you to install Java but they make you remotely log in to a Debian Linux server on campus and it doesn't have a GUI. What command do you enter?
+a. src_bash[:exports code]{scoop install java}
+b. src_bash[:exports code]{apt install java}
+c. src_bash[:exports code]{brew install java}
+d. src_bash[:exports code]{install dr.Java}b
