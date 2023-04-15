@@ -3,33 +3,30 @@
 #+REVEAL_REVEAL_JS_VERSION: 4
 #+REVEAL_PLUGINS: (highlight)
 :END:
-#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: toc:nil num:nil timestamp:nil author:nil
 #+author: Luis Gascon
 #+title: Terminal: Friendlier than it seems
 
-#+begin_notes
-My name's Luis Gascon. I want to share my workflow and the tools that I love in the command line to break the myth that you have to be an advanced computer user to use it.
-
-I recently switched over to a Macbook because the M1 is too good to pass. I'm still uncomfortable with MacOS and it's weird quirks but thanks to its UNIX shell, I felt right at home and was able to get things done.
-#+end_notes
-
 * It's 2023. Why do terminals still exist?
-The command line doesn't look modern. Are you trying to be a try hard?
-No. It does come with many benefits
+Terminals are awkward, scary and old. Are you trying to be a try hard?
+
+No.
+
 Learning how to use the command line opens up a new avenue to using computers.
 ** Automation
 You can easily automate manual tasks with text compared to clicking buttons around
 
 The power to chain commands together is so powerful, people get paid to do it 😎
-** It's the only way to use certain software
-Many open source applications are only built to be interacted with the terminal. Some have GUIs made for it, but it takes considerable effort to do so and if you've played around with some, it's janky and slow.
-** Blazingly fast
-If it's written in rust...
+** No GUI? No problem
+If you want to use a remote server that a cloud platform provides, interacting with the command line is optimal because sending a graphics over the internet can be pretty slow.
+** Fun!
+You don't want to miss out on some cool open source projects
 
+Many of those applications require the use of the CLI
+** Blazingly fast 🚀
 
 * Note for Windows users...
-I'm no Windows expert, but from experience, cmd.exe is trash, and I don't recommend on using it.
-Unsure if it comes by default but Windows has a terminal emulator called "Windows Terminal" that can deal with it
+I'm no Windows expert, but from experience, cmd.exe is trash, and I don't recommend on using it. You either use it for legacy applications or you're actually a try hard.
 * She sells sea =shell= s by the sea shore
 A shell is the program that interprets the commands that you input.
 By default,
@@ -38,33 +35,76 @@ By default,
 | MacOS   | zsh           |
 | Windows | powershell    |
 | Linux   | bash          |
-
-MacOS ships with zsh,
-most Linux distributions come with bash,
-Windows with powershell
-
-The beauty of it is that you can always change it
-You can think of a shell like the Python interpreter
-* Navigation
+** Alternative shells
+#+BEGIN_NOTES
+Don't get too hung up to which shell you should use. Explore!
+If you find one that
+#+END_NOTES
+The following are alternative shells:
+- [[https://fishshell.com][fish]]
+  + Sane defaults
+- [[https://www.nushell.sh][nushell]]
+  + Inspired by PowerShell
+- [[https://elv.sh][elvish]]
+  + Cool name
+- [[https://xon.sh/contents.html][xonsh]]
+  + If you like Python
+* Basic navigation
+#+ATTR_REVEAL: :frag (appear)
 + =ls=
-  - Take a peek at current directory or at a specified location
+  #+ATTR_REVEAL: :frag (appear)
+  - Useful if you want to see what's in a directory
+  - Without an argument: Prints out the files within the current directory
+  - With an argument: Prints out the files within the argument *directory*
 + =cd=
-  - Change directory. This allows
-+ =ranger=
-  - Isn't shipped by default but it makes terminal navigation much more intuitive and visual
-  - To install ranger, we'll have to know about package managers, which I'll cover in a bit
+  #+ATTR_REVEAL: :frag (appear)
+  - Change directory
 * Working with files
 + =mv=
+  - Move or rename a file
 + =cat=
+  - Output the contents of a file
++ =touch=
+  - Create a file
 + =rm=
+  - Deletes a file
 * What are flags?
 Flags modify how a program behaves.
-For example, when you pass a =-a= flag to =ls=, it will also include hidden files, A.K.A dotfiles since they start with dots
-* Package managers
-Imagine clicking buttons to install a program when you could look like this:
-<Insert chad using a terminal>
+*** ls
+When you pass a =-a= flag to =ls=, it will also include hidden files, A.K.A dotfiles since they start with dots
 
+#+ATTR_HTML: :width 50% :align left
+[[./img/ls.png]]
+#+ATTR_HTML: :width 50% :align right
+[[./img/lsa.png]]
+*** rm
+- If you want to delete a directory, you'll have to pass the ~-r~ keyword
+- If you certainly want to delete a directory, pass the ~-rf~ keyword.
+* Perfect combo!
+The ~|~ (pipe) operator allows you to perform some interesting combos with commands
+
+** Making (crappy) code aesthetic and less readable
+src_bash[:exports code]{cat exercise_4.py | lolcat -a -s 60}
+[[./img/cat.gif]]
+** A more practical example...
+src_bash[:expors code]{ps aux | rg discord | rg -v rg | awk '{printf "%s %d\n", $11,  $2}'}
+
+* Package managers
+Installing applications from this:
+[[https://media4.giphy.com/media/dwWeyfOCKSptC/giphy.gif?cid=ecf05e47tdf5n26rd2rnnm3idnam4zlvzq8g6mcgat1puh34&rid=giphy.gif&ct=g]]
+** To this
+[[https://media4.giphy.com/media/H3CViADSOAHdK/giphy.gif?cid=ecf05e47v94fyrmx563cec9xcug9b7vdjnxnk4p24mshe4rx&rid=giphy.gif&ct=g]]
+
+** What's a package manager
 A package manager downloads, installs, uninstalls and automagically configures your system to be able to run the command that you want to install.
+
+*** Examples of languages that use package managers
+| Language   | Package manager |
+|------------+-----------------|
+| Python     | pip             |
+| JavaScript | yarn or npm     |
+| Rust       | cargo           |
+| Go         | go modules      |
 
 ** Windows
 - Scoop
@@ -80,38 +120,76 @@ A package manager downloads, installs, uninstalls and automagically configures y
 - Nix
   + This package manager is great if you're up for a challenge!
 ** Linux
-- Depends on the distribution, so I'm not about to list all of them
+- Depends on the distribution, but here's a few examples
+| Distro       | Package manager |
+|--------------+-----------------|
+| Arch based   | pacman          |
+| Debian based | apt             |
+| Fedora       | yum             |
 
-* How to make the terminal more /aesthetic/ and /functional/
+* How to make the terminal more /aesthetic/ and /awesome/
 You're not constraint to a boring black screen with lines of text strewn across it
-There are a myriad of open source tools that can turn make the terminal experience significantly more pleasant.
+
+There are thousands of programs that can be configured to your liking and it's a whole lot of fun!
+
+** Checkout [[https://www.reddit.com/r/unixporn/][r/unixporn]] for inspirations
+#+REVEAL_HTML: <img src="https://i.redd.it/8vjdgeh6auqa1.png" class="r-stretch">
 ** Custom Prompts
 - [[https://starship.rs][Starship]]
   + Provides convenient information depending on the context of your current directory such as what type of files are in the
 ** Alternatives to common commands
+#+begin_notes
+Before I turn this club into the Rust fan club, there has been a trend of common commands being rewritten in Rust
+#+end_notes
 Open source is beautiful in that you can try out alternatives to the commands that we just learned about
 Some add more functionality, and some are more performant.
-- [[https://github.com/sharkdp/fd][fd]]
-  + An alternative to the find command. Very handy when you can't find a certain file
-- [[https://github.com/BurntSushi/ripgrep][rg]]
-  + Stands for rip grep, which looks for patterns within files so if you can't remember which file has the keyword "hello world", it'll tell you where it's located and which line in the file it's located.
+*** [[https://github.com/sharkdp/fd][fd]]
++ An alternative to the find command.
++ Much easier to remember how to use
+*** [[https://github.com/BurntSushi/ripgrep][rg]]
++ Stands for rip grep, which looks for patterns within files
++ If you can't remember which file has the keyword "hello world", run the following command:
+#+begin_src bash
+rg 'hello world'
+#+end_src
+***
+** An alternative terminal emulator
+Default terminal emulators can get the job done but there are free alternatives that can enhance the terminal experience.
+
+Some terminal emulators are cross-platform, which is nice if you want to keep the same configuration across different systems.
+*** Windows
+If you haven't upgraded to Windows 11, then the [[https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701][Windows Terminal]] is amazing.
+- Tab and window splitting out of the box for multi tasking
+- GPU accelerated
+- Easily switch between WSL2 and PowerShell
+- Easy configuration
+*** MacOS
+My daily driver at the moment is [[https://sw.kovidgoyal.net/kitty/][kitty]]. I love it for the following reasons
+- GPU accelerated
+- Built-in tabs and splits
+- Supports ligatures and emojis
+iTerm2 is another great alternative
+*** Linux
+A few that I've used in the past
+- Alacritty
+- WezTerm
 -
 ** Text editors
-If you want to stay in the terminal, there are multiple text editors that can be as powerful as GUI-based text editors such as VSCode, and definitely more than Dr. Java 🤮
 - [[https://neovim.io][Neovim]]
 - [[https://helix-editor.com][Helix]]
-  + A modal text editor similar to Vim but with a twist. LSP support is included out of the box, so as long as you have the LSP installed, you can be up and running in no time
 - Emacs
 * Trivia
-** Where did I put it?
-You saved a recipe that your mother gave you as a text file somewhere within your home directory, but you can't remember where you saved it. You can't recall the title but you remember it had the words "Tomato" in the file. What do you do?
-a. Search through all the text files within your home directory one by one
-b. Use either ~fd~ or ~find~ command
-c. Use either =grep= or =rg= command
-d. Ask your mom for the recipe again
+** Where did I save it?
+After toiling away for days, you finish your data structures assignment 1 hour away before its due. You close the hundred of tabs that you used to research for the solution. You admire your elegant recursive solution. Saved all your files and closed the editor. You happily go to blackboard to upload the files but it's not at the usual spot.
+
+*** What do you do?
+a. Manually look through your files one by one with ~cat~.
+b. Use either ~fd~ or ~find~ command.
+c.  Ask ChatGPT to redo the assignment for you.
+d. Call it a day because GPA doesn't matter.
 ** Getting ready for class
 On the first day of your programming class, your professor asks you to install Java but they make you remotely log in to a Debian Linux server on campus and it doesn't have a GUI. What command do you enter?
 a. src_bash[:exports code]{scoop install java}
 b. src_bash[:exports code]{apt install java}
 c. src_bash[:exports code]{brew install java}
-d. src_bash[:exports code]{install dr.Java}b
+d. src_bash[:exports code]{pacman -Syu java}
