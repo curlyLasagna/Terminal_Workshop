@@ -26,7 +26,7 @@ You don't want to miss out on some cool open source projects
 Many of those applications require the use of the CLI
 ** Blazingly fast 🚀
 [[https://media.giphy.com/media/W4vfMnAXKePK0GptGJ/giphy.gif]]
-* She sells sea =shell= s by the sea shore
+* She sells sea =shells=  by the sea shore
 A shell is the program that interprets the commands that you input.
 By default,
 | OS      | Default shell           |
@@ -65,7 +65,7 @@ The following are alternative shells:
 + =touch=
   - Create a file
 + =rm=
-  - Deletes a file
+  - Delete a file
 * What are flags?
 Flags modify how a program behaves.
 *** ls
@@ -78,6 +78,19 @@ When you pass a =-a= flag to =ls=, it will also include hidden files, A.K.A dotf
 *** rm
 - If you want to delete a directory, you'll have to pass the ~-r~ keyword
 - If you certainly want to delete a directory, pass the ~-rf~ keyword.
+*** But reading through the manual is exhausting 😫
+[[https://media.giphy.com/media/QVxeI5qhmlXAkqaAro/giphy.gif]]
+
+_But_
+#+reveal: split
+Before you copy paste and run the command, be sure it's not a troll and you have some basic understanding of the flags provided.
+
+For some commands, there is an option called ~dry-run~ that runs the command without actually affecting your computer.
+
+Kind of like a sandbox
+
+src_bash[:exports code]{$ bash -n <script>}
+
 * Perfect combo!
 The ~|~ (pipe) operator allows you to perform some interesting combos with commands
 
@@ -151,25 +164,27 @@ A package manager downloads, installs, uninstalls and automagically configures y
 CLI applications are highly configurable to suit your needs.
 #+reveal: split
 *Warning: The rabbit hole of customization is a deep one*
-[[https://media.giphy.com/media/1SNtscG1Jiz9injngv/giphy-downsized-large.gif]]
+#+REVEAL_HTML: <img src="https://media.giphy.com/media/1SNtscG1Jiz9injngv/giphy-downsized-large.gif" class="r-bstretch">
+# [[https://media.giphy.com/media/1SNtscG1Jiz9injngv/giphy-downsized-large.gif]]
 ** Alternatives to common commands
 #+begin_notes
 Before I turn this club into the Rust fan club, there has been a trend of rustifying existing commands.
 The following commands are all written in Rust.
 #+end_notes
-*** [[https://github.com/sharkdp/fd][fd]]
-+ An alternative to the find command.
-+ Easier syntax compared to ~find~
-*** [[https://github.com/BurntSushi/ripgrep][rg]]
-+ Stands for rip grep, which looks for patterns within files, similar to grep, but better
-+ Can respect =.gitignore= rules
-*** [[https://github.com/curlyLasagna/Terminal_Workshop][exa]]
-+ A modern ~ls~
-+ Colors files and directories by default
+- [[https://github.com/sharkdp/fd][fd]]
+  + An alternative to the find command.
+  + Easier syntax compared to ~find~
+- [[https://github.com/BurntSushi/ripgrep][rg]]
+  + Stands for rip grep, which looks for patterns within files, similar to grep, but better
+  + Can respect =.gitignore= rules
+- [[https://github.com/curlyLasagna/Terminal_Workshop][exa]]
+  + A modern ~ls~
+  + Colors files and directories by default
 ** ~cd~ at the speed of your thoughts
 Using ~cd~ to go to places takes too long 😫
 #+ATTR_REVEAL: :frag (appear)
 I introduce...
+
 #+ATTR_REVEAL: :frag (appear)
 [[https://github.com/agkozak/zsh-z][z]]
 #+begin_notes
@@ -178,11 +193,11 @@ Go to your terminal and run z to show the potential of z
 ** Custom Prompts
 - [[https://starship.rs][Starship]]
   + Provides convenient information depending on the context of your current directory
-    [[./img/starship.png]]
-  + Java = 💩
-    #+begin_notes
-    I uninroncally enjoy using Java for assignments. It's not really poop but I like to meme
-    #+end_notes
+[[./img/starship.png]]
+Java = 💩
+  #+begin_notes
+  I uninroncally enjoy using Java for assignments. It's not really poop but I like to meme
+  #+end_notes
 ** An alternative terminal emulator
 Default terminal emulators can get the job done but there are free alternatives that can enhance the terminal experience.
 
@@ -208,11 +223,15 @@ Notable ones that I've used in the past
 - [[https://github.com/alacritty/alacritty][Alacritty]]
 - [[https://wezfurlong.org/wezterm/#:~:text=WezTerm%20is%20a%20powerful%20cross,Download][WezTerm]]
 ** Text editors
-- [[https://neovim.io][Neovim]]
-- [[https://helix-editor.com][Helix]]
+- [[https://neovim.io][neovim]]
+- [[https://helix-editor.com][helix]]
 - [[https://www.gnu.org/software/emacs/][Emacs]]
+- [[https://github.com/zee-editor/zee][zee]]
+- [[https://amp.rs][amp]]
+- [[https://github.com/zyedidia/micro][micro]]
+  + Easiest to learn!
 #+begin_notes
-Open each editor to some code
+Open each text editor to some code
 Graphical Emacs is a much better experience, but I just wanted to give it a shout out since it's my favorite IDE.
 #+end_notes
 ** Checkout [[https://www.reddit.com/r/unixporn/][r/unixporn]] for inspirations
